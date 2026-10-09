@@ -1,0 +1,66 @@
+{
+  "trend_column_vs_panel_max_abs_diff": {
+    "pop": 9.8879238130678e-17,
+    "gdp": 1.1102230246251565e-16
+  },
+  "metric_convention_verification": {
+    "pop:simulation_ensemble_median_expected_hazard": {
+      "rmse_absdiff": 2.7755575615628914e-17,
+      "bias_absdiff": 1.9949319973733282e-17
+    },
+    "pop:persistence_zero_growth": {
+      "rmse_absdiff": 4.163336342344337e-17,
+      "bias_absdiff": 9.020562075079397e-17
+    },
+    "pop:county_trend_extrapolation_2002_2010_mean_x9": {
+      "rmse_absdiff": 4.163336342344337e-17,
+      "bias_absdiff": 1.3877787807814457e-17
+    },
+    "gdp:simulation_ensemble_median_expected_hazard": {
+      "rmse_absdiff": 2.7755575615628914e-17,
+      "bias_absdiff": 1.3877787807814457e-17
+    },
+    "gdp:persistence_zero_growth": {
+      "rmse_absdiff": 5.551115123125783e-17,
+      "bias_absdiff": 4.163336342344337e-17
+    },
+    "gdp:county_trend_extrapolation_2002_2010_mean_x9": {
+      "rmse_absdiff": 5.551115123125783e-17,
+      "bias_absdiff": 6.245004513516506e-17
+    }
+  },
+  "lambda_validation_primary_splitA": {
+    "pop": {
+      "regional": 0.7,
+      "state": 0.7,
+      "EB": 0.9210396422282588,
+      "EB_var_of_means": 0.0001538040480141355,
+      "EB_noise": 1.2144422657938202e-05
+    },
+    "gdp": {
+      "regional": 0.0,
+      "state": 0.1,
+      "EB": 0.0,
+      "EB_var_of_means": 0.0004068932186664937,
+      "EB_noise": 0.0005286963695063967
+    }
+  },
+  "lambda_consensus": {
+    "pop": {
+      "regional": 0.6,
+      "state": 0.6
+    },
+    "gdp": {
+      "regional": 0.0,
+      "state": 0.0
+    }
+  },
+  "best_nonoracle_shrunk": {
+    "pop": "shrunk_regional_EXANTE_lambdaA0.7",
+    "gdp": "shrunk_state_EXANTE_lambdaA0.1"
+  },
+  "best_honest_baseline_overall": {
+    "pop": "persistence_zero_growth",
+    "gdp": "shrunk_state_EXANTE_lambdaA0.1"
+  }
+}

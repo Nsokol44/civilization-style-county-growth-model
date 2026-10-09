@@ -1,0 +1,17 @@
+variant,spec,policy,outcome,rmse,mae,bias,err_sd,demeaned_rmse,pearson,spearman
+nri_free_headline,pooled,mean,gdp,0.20434,0.15309,0.0508,0.19793,0.19793,0.25648,0.21677
+nri_free_headline,pooled,mean,pop,0.08239,0.06289,0.04025,0.07189,0.07189,0.6283,0.63197
+nri_free_headline,pooled,conditional,gdp,0.19793,0.14825,-0.0,0.19793,0.19793,0.25648,0.21677
+nri_free_headline,pooled,conditional,pop,0.07189,0.05267,0.0,0.07189,0.07189,0.6283,0.63197
+nri_free_headline,state_year_fe,mean,gdp,0.20738,0.15553,0.0644,0.19712,0.19712,0.27234,0.24402
+nri_free_headline,state_year_fe,mean,pop,0.08332,0.06415,0.04282,0.07147,0.07147,0.63146,0.64086
+nri_free_headline,state_year_fe,conditional,gdp,0.1882,0.13912,-0.0,0.1882,0.1882,0.39129,0.38387
+nri_free_headline,state_year_fe,conditional,pop,0.06864,0.05103,-0.0,0.06864,0.06864,0.67165,0.69026
+with_nri_v120,pooled,mean,gdp,0.20603,0.15509,0.05181,0.19941,0.19941,0.23917,0.2014
+with_nri_v120,pooled,mean,pop,0.08418,0.0641,0.04258,0.07262,0.07262,0.61546,0.62071
+with_nri_v120,pooled,conditional,gdp,0.19941,0.14916,0.0,0.19941,0.19941,0.23917,0.2014
+with_nri_v120,pooled,conditional,pop,0.07262,0.05295,0.0,0.07262,0.07262,0.61546,0.62071
+with_nri_v120,state_year_fe,mean,gdp,0.20739,0.15633,0.06105,0.1982,0.1982,0.26116,0.22922
+with_nri_v120,state_year_fe,mean,pop,0.08552,0.0659,0.04635,0.07187,0.07187,0.62475,0.63669
+with_nri_v120,state_year_fe,conditional,gdp,0.1895,0.14024,-0.0,0.1895,0.1895,0.3785,0.37395
+with_nri_v120,state_year_fe,conditional,pop,0.06906,0.05135,-0.0,0.06906,0.06906,0.66396,0.67785

@@ -1,0 +1,205 @@
+{
+  "run_date": "2026-10-06",
+  "runtime_seconds": 192.6,
+  "python": "3.12.3",
+  "expected_outputs": {
+    "figures": [
+      "results/figures/fig1_error_choropleths.pdf",
+      "results/figures/fig1_error_choropleths.png",
+      "results/figures/fig2_pred_vs_actual.pdf",
+      "results/figures/fig2_pred_vs_actual.png",
+      "results/figures/fig3_rolling_skill.pdf",
+      "results/figures/fig3_rolling_skill.png",
+      "results/figures/fig4_scenario_grids.pdf",
+      "results/figures/fig4_scenario_grids.png"
+    ],
+    "tables": [
+      "gate2010_baseline_metrics.csv",
+      "gate2010_bootstrap_ci.csv",
+      "gate2010_lambda_curves.csv",
+      "gate2010_lambda_validation.csv",
+      "gate2010_per_state_diffs.csv",
+      "rolling_metrics.csv",
+      "rolling_inference.csv",
+      "lambda_validation_all_origins.csv",
+      "coefficients_2010.csv",
+      "nri_sensitivity.csv",
+      "spatial_diagnostic.csv",
+      "S1_grid.csv",
+      "S2_band.csv",
+      "S1_grid2d_regional.csv",
+      "S1_grid2d_flagged.csv",
+      "S2_grid2d.csv",
+      "hindcast_county_2010_headline_conditional.csv",
+      "hindcast_county_2010_headline_mean.csv",
+      "neural_cv.csv",
+      "hindcast_county_2010_neural.csv"
+    ]
+  },
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "geopandas": "1.2.0",
+    "shapely": "2.1.2",
+    "sklearn": "1.9.1"
+  },
+  "neural": {
+    "seed": 20261006,
+    "hidden": 16,
+    "wd_grid": [
+      0.03,
+      0.1,
+      0.3
+    ],
+    "epochs_final": 300,
+    "epochs_cv": 200,
+    "lr": 0.01,
+    "min_window": 3,
+    "state_folds": [
+      [
+        "AL",
+        "KY",
+        "SC"
+      ],
+      [
+        "FL",
+        "MS",
+        "TN"
+      ],
+      [
+        "GA",
+        "NC",
+        "VA"
+      ]
+    ],
+    "mlp_alpha": 3.0,
+    "graph_edges": 19643,
+    "selected_wd": {
+      "2006:gdp": 0.3,
+      "2006:pop": 0.1,
+      "2006:goods_share": 0.3,
+      "2006:services_share": 0.3,
+      "2008:gdp": 0.1,
+      "2008:pop": 0.1,
+      "2008:goods_share": 0.1,
+      "2008:services_share": 0.1,
+      "2010:gdp": 0.3,
+      "2010:pop": 0.1,
+      "2010:goods_share": 0.1,
+      "2010:services_share": 0.1,
+      "2012:gdp": 0.1,
+      "2012:pop": 0.03,
+      "2012:goods_share": 0.1,
+      "2012:services_share": 0.1
+    },
+    "train_seconds_gnn": 159.1,
+    "train_seconds_mlp": 16.5,
+    "per_origin_seconds": {
+      "2006": 11.5,
+      "2008": 36.1,
+      "2010": 57.2,
+      "2012": 70.9
+    }
+  },
+  "seed_bootstrap": 20261006,
+  "bootstrap_reps": 2000,
+  "origins": [
+    2006,
+    2008,
+    2010,
+    2012
+  ],
+  "specs": [
+    "pooled",
+    "state_fe",
+    "state_year_fe",
+    "county_fe"
+  ],
+  "policies": [
+    "mean",
+    "conditional"
+  ],
+  "estimation_start": 2003,
+  "n_counties": 841,
+  "data_sha256": {
+    "DATA_MANIFEST.md": "cd8454a5e662de064b478526af2e3bed72af991c29d27d952ab16ea963a95f27",
+    "SHA256SUMS.txt": "6bb3e5f7a611c682f7467ed810ba19bfa6367a7e672816532fa0e223a0bc56e3",
+    "build_report.json": "2a2899b6b5f4562294f936d8cda5b8e1fb3c84537bc64c7cceca3372c0526602",
+    "county_geometries.geojson": "31e2327b7743002b28b8c450480a7c94f2cc03b23ae7e8082a0fb813d1e55a9f",
+    "county_panel.csv": "e07b59645980fc844659607416fc5750d85dd4ec05bfc13a950037d0827e0a68",
+    "county_static.csv": "b52e2f85f38d8af51b9ab42d2bce8ad44f46f39a372078d675acbf6de07e1456",
+    "dist_km.npy": "ddd14f62a17835760399c986fc9fe19625b67f5047f1b3461fc6179993df8e5b",
+    "fetch_data.py": "de2e24b25720687b27b534909cdf69129c7f3fd03b098dbb948722d92ef01bfc",
+    "v1_hindcast_county.csv": "8b943e57c262917567ad587c56c86a384e66594a4eec18207fa8c1fd542d641e",
+    "v1_hindcast_metrics.csv": "563d25bee97706f26c96069f7cf8688e7fc2ac1f31039bcf5ffad2384153cea0"
+  },
+  "gate_reproduction": {
+    "trend_column_vs_panel_max_abs_diff": {
+      "pop": 9.8879238130678e-17,
+      "gdp": 1.1102230246251565e-16
+    },
+    "metric_convention_verification": {
+      "pop:simulation_ensemble_median_expected_hazard": {
+        "rmse_absdiff": 2.7755575615628914e-17,
+        "bias_absdiff": 1.9949319973733282e-17
+      },
+      "pop:persistence_zero_growth": {
+        "rmse_absdiff": 4.163336342344337e-17,
+        "bias_absdiff": 9.020562075079397e-17
+      },
+      "pop:county_trend_extrapolation_2002_2010_mean_x9": {
+        "rmse_absdiff": 4.163336342344337e-17,
+        "bias_absdiff": 1.3877787807814457e-17
+      },
+      "gdp:simulation_ensemble_median_expected_hazard": {
+        "rmse_absdiff": 2.7755575615628914e-17,
+        "bias_absdiff": 1.3877787807814457e-17
+      },
+      "gdp:persistence_zero_growth": {
+        "rmse_absdiff": 5.551115123125783e-17,
+        "bias_absdiff": 4.163336342344337e-17
+      },
+      "gdp:county_trend_extrapolation_2002_2010_mean_x9": {
+        "rmse_absdiff": 5.551115123125783e-17,
+        "bias_absdiff": 6.245004513516506e-17
+      }
+    },
+    "lambda_validation_primary_splitA": {
+      "pop": {
+        "regional": 0.7,
+        "state": 0.7,
+        "EB": 0.9210396422282588,
+        "EB_var_of_means": 0.0001538040480141355,
+        "EB_noise": 1.2144422657938202e-05
+      },
+      "gdp": {
+        "regional": 0.0,
+        "state": 0.1,
+        "EB": 0.0,
+        "EB_var_of_means": 0.0004068932186664937,
+        "EB_noise": 0.0005286963695063967
+      }
+    },
+    "lambda_consensus": {
+      "pop": {
+        "regional": 0.6,
+        "state": 0.6
+      },
+      "gdp": {
+        "regional": 0.0,
+        "state": 0.0
+      }
+    },
+    "best_nonoracle_shrunk": {
+      "pop": "shrunk_regional_EXANTE_lambdaA0.7",
+      "gdp": "shrunk_state_EXANTE_lambdaA0.1"
+    },
+    "best_honest_baseline_overall": {
+      "pop": "persistence_zero_growth",
+      "gdp": "shrunk_state_EXANTE_lambdaA0.1"
+    }
+  }
+}
